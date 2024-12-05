@@ -13,6 +13,9 @@ namespace DJ {
             // ==== Instantiate ====
             ctx = new GameContext();
 
+            Canvas canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+            ctx.Inject(canvas);
+
             // ==== Binding ====
 
             // ==== Init ====
@@ -20,12 +23,19 @@ namespace DJ {
 
             // ==== Enter ====
             Debug.Log("Hello World");
-            PlayerDomain.Spawn(ctx, 1);
-            PlatformDomain.Spawn(ctx, 1);
+
+            Login_Business.Enter(ctx);
+
+            Binding();
         }
 
         void Binding() {
+            var uIEvent = ctx.uiApp.ctx.uIEvent;
 
+            uIEvent.OnBtnLoginHandle += () => {
+                ctx.uiApp.Panel_Login_Close();
+                Game_Business.Enter(ctx);
+            };
         }
 
         void Update() {
