@@ -32,6 +32,12 @@ namespace DJ {
             float dt = Time.deltaTime;
 
             ctx.inputCore.ProcessMove();
+
+            int playerlen = ctx.playerRepository.TakeAll(out PlayerEntity[] players);
+            for (int i = 0; i < playerlen; i++) {
+                PlayerEntity player = players[i];
+                PlayerDomain.Move(ctx, player);
+            }
         }
 
         void OnDstroy() {

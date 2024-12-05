@@ -16,15 +16,23 @@ namespace DJ {
         public float moveSpeed;
 
         public void Ctor() {
-
+            moveSpeed = 5;
         }
 
-        public void Move(Vector2 dir) {
+        public void Move(Vector2 dir, Vector2 face) {
             Vector2 pos = rb.velocity;
-            dir = dir.normalized;
-            pos = dir * moveSpeed;
+            pos.x = dir.x * moveSpeed;
             rb.velocity = pos;
+
+            // face 
+            if (face.x > 0) {
+                transform.localScale = new Vector3(1, 1, 1);
+            } else if (face.x < 0) {
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
         }
+
+
 
         public void TearDown() {
             Destroy(gameObject);

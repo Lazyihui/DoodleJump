@@ -34,8 +34,6 @@ namespace DJ {
             moveAxis.Normalize();
             this.moveAxis = moveAxis;
             this.faceAxis = faceAxis;
-            Debug.Log("InputCore.ProcessMove" + moveAxis + faceAxis);
-
             // 面向
 
         }

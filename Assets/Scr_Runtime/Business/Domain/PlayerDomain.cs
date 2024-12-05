@@ -15,7 +15,9 @@ namespace DJ {
         }
 
         public static void Move(GameContext ctx, PlayerEntity Player) {
-            
+            InputCore input = ctx.inputCore;
+            Debug.Log("PlayerDomain.Move"+input.moveAxis);
+            Player.Move(input.moveAxis,input.faceAxis);
         }
     }
 }
