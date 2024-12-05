@@ -2,12 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class main : MonoBehaviour {
-    void Awake() {
-        Debug.Log("Hello World");
-    }
+namespace DJ {
+    public class main : MonoBehaviour {
 
-    void Update() {
+        GameContext ctx;
 
+        bool isTearDown = false;
+
+        void Awake() {
+            // ==== Instantiate ====
+            ctx = new GameContext();
+
+            // ==== Binding ====
+
+            // ==== Init ====
+            ctx.assetsCore.LoadAll();
+
+            // ==== Enter ====
+            Debug.Log("Hello World");
+            PlayerDomain.Spawn(ctx, 1);
+        }
+
+        void Binding() {
+
+        }
+
+        void Update() {
+
+        }
+
+        void OnDstroy() {
+            TearDown();
+        }
+
+        void OnApplicationQuit() {
+            TearDown();
+        }
+
+        void TearDown() {
+            if (isTearDown) {
+                return;
+            }
+            isTearDown = true;
+            ctx.assetsCore.UnLoadAll();
+        }
     }
 }
