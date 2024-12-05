@@ -14,5 +14,8 @@ namespace DJ {
             return entity;
         }
 
+        public static void Move(GameContext ctx, PlayerEntity Player) {
+            
+        }
     }
 }

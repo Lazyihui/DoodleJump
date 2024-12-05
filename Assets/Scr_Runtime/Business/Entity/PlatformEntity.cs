@@ -9,6 +9,9 @@ namespace DJ {
         public int typeID;
         public float bounceSpeed;
 
+        // bool 
+        bool isWeakPlatform;
+
         public void Ctor() {
             bounceSpeed = 9;
         }
@@ -21,6 +24,10 @@ namespace DJ {
                 if (rb != null) {
                     rb.velocity = Vector2.up * bounceSpeed;
                 }
+            }
+
+            if (isWeakPlatform) {
+                // 播动画
             }
 
         }

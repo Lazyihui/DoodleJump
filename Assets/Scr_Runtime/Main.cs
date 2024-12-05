@@ -29,7 +29,9 @@ namespace DJ {
         }
 
         void Update() {
+            float dt = Time.deltaTime;
 
+            ctx.inputCore.ProcessMove();
         }
 
         void OnDstroy() {
