@@ -21,6 +21,7 @@ namespace DJ {
             // ==== Enter ====
             Debug.Log("Hello World");
             PlayerDomain.Spawn(ctx, 1);
+            PlatformDomain.Spawn(ctx, 1);
         }
 
         void Binding() {

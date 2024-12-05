@@ -39,11 +39,16 @@ namespace DJ {
         }
         // Entity
         public GameObject Entity_GetPlayer() {
-            entities.TryGetValue("Entity_Player", out GameObject role);
-            if (role == null) {
+            entities.TryGetValue("Entity_Player", out GameObject entity);
+            if (entity == null) {
                 Debug.LogError("Entity_Player is null");
             }
-            return role;
+            return entity;
+        }
+
+        public GameObject Entity_GetPlatform() {
+            entities.TryGetValue("Entity_Platform", out GameObject entity);
+            return entity;
         }
 
     }
