@@ -1,15 +1,16 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 namespace DJ {
-    public class Panel_Login : MonoBehaviour {
+    public class Panel_Login : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler {
 
-        [SerializeField] Button btnLogin;
+        public LazyButton btnLogin;
         public Action OnBtnLoginHandle;
 
         public void Ctor() {
-            btnLogin.onClick.AddListener(() => {
+            btnLogin.btn.onClick.AddListener(() => {
                 if (OnBtnLoginHandle != null) {
                     OnBtnLoginHandle?.Invoke();
                 }
@@ -20,5 +21,10 @@ namespace DJ {
             Destroy(gameObject);
         }
 
+        void IPointerClickHandler.OnPointerClick(PointerEventData eventData) {
+        }
+
+        void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData) {
+        }
     }
 }

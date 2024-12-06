@@ -24,7 +24,7 @@ namespace DJ {
         }
 
         public void Inject(Canvas canvas) {
-            uiApp.ctx.Inject(assetsCore, canvas);
+            uiApp.Inject(assetsCore, canvas);
         }
     }
 }

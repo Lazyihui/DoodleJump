@@ -30,7 +30,8 @@ namespace DJ {
         }
 
         void Binding() {
-            var uIEvent = ctx.uiApp.ctx.uIEvent;
+
+            var uIEvent = ctx.uiApp.events;
 
             uIEvent.OnBtnLoginHandle += () => {
                 ctx.uiApp.Panel_Login_Close();
