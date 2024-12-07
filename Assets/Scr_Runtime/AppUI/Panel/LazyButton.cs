@@ -10,8 +10,12 @@ namespace DJ {
     IPointerUpHandler {
 
         [SerializeField] public Button btn;
+        public Action OnBtnPointerUpHandle;
 
         public void OnPointerMove(PointerEventData eventData) {
+            if (OnBtnPointerUpHandle != null) {
+                OnBtnPointerUpHandle?.Invoke();
+            }
         }
 
         public void OnPointerUp(PointerEventData eventData) {

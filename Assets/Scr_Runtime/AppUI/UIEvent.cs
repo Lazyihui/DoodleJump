@@ -8,8 +8,14 @@ namespace DJ {
 
         public void OnBtnLogin() {
             if (OnBtnLoginHandle != null) {
-                Debug.Log("OnBtnLoginHandle555555555");
                 OnBtnLoginHandle?.Invoke();
+            }
+        }
+
+        public Action OnBtnPointerUpHandle;
+        public void OnBtnPointerUp() {
+            if (OnBtnPointerUpHandle != null) {
+                OnBtnPointerUpHandle?.Invoke();
             }
         }
     }

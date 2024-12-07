@@ -37,6 +37,10 @@ namespace DJ {
                 ctx.uiApp.Panel_Login_Close();
                 Game_Business.Enter(ctx);
             };
+
+            uIEvent.OnBtnPointerUpHandle += () => {
+                Debug.Log("OnBtnPointerUpHandle");
+            };
         }
 
         void Update() {

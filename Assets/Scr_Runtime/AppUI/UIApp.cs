@@ -16,7 +16,7 @@ namespace DJ {
         //     }
         // }
         public UIEvent events => ctx.uIEvent;
-        
+
         public UIEvent GetEvents() {
             return ctx.uIEvent;
         }
@@ -46,6 +46,9 @@ namespace DJ {
 
                 panel.OnBtnLoginHandle += () => {
                     ctx.uIEvent.OnBtnLogin();
+                };
+                panel.OnBtnPointerUpHandle += () => {
+                    ctx.uIEvent.OnBtnPointerUp();
                 };
 
             }
