@@ -7,6 +7,9 @@ namespace DJ {
     public class Panel_Login : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler {
 
         public LazyButton btnLogin;
+        public LazyButton btnLogin2;
+        public LazyButton btnLogin3;
+        public LazyButton btnLogin4;
         public Action OnBtnLoginHandle;
         public Action OnBtnPointerEnterHandle;
 
@@ -22,6 +25,22 @@ namespace DJ {
                     OnBtnPointerEnterHandle?.Invoke();
                 }
             };
+            btnLogin2.OnBtnPointerEnterHandle = () => {
+                if (OnBtnPointerEnterHandle != null) {
+                    OnBtnPointerEnterHandle?.Invoke();
+                }
+            };
+            btnLogin3.OnBtnPointerEnterHandle = () => {
+                if (OnBtnPointerEnterHandle != null) {
+                    OnBtnPointerEnterHandle?.Invoke();
+                }
+            };
+            btnLogin4.OnBtnPointerEnterHandle = () => {
+                if (OnBtnPointerEnterHandle != null) {
+                    OnBtnPointerEnterHandle?.Invoke();
+                }
+            };
+
         }
 
         public void TearDown() {
