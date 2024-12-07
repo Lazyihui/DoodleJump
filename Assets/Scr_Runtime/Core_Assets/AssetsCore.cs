@@ -69,6 +69,11 @@ namespace DJ {
             return entity;
         }
 
+        public GameObject Entity_GetAudio() {
+            entities.TryGetValue("Entity_Audio", out GameObject entity);
+            return entity;
+        }
+
         // Panel
         public GameObject Panel_GetLogin() {
             panels.TryGetValue("Panel_Login", out GameObject panel);

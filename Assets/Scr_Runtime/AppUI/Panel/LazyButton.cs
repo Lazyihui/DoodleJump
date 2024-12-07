@@ -7,15 +7,19 @@ using UnityEngine.EventSystems;
 namespace DJ {
 
     public class LazyButton : MonoBehaviour, ISelectHandler/*点击时使用*/, IPointerMoveHandler/*鼠标移动时使用*/,
-    IPointerUpHandler {
+    IPointerUpHandler, IPointerEnterHandler {
 
         [SerializeField] public Button btn;
-        public Action OnBtnPointerUpHandle;
+        public Action OnBtnPointerEnterHandle;
+
+        public void OnPointerEnter(PointerEventData eventData) {
+            if (OnBtnPointerEnterHandle != null) {
+                OnBtnPointerEnterHandle?.Invoke();
+            }
+        }
 
         public void OnPointerMove(PointerEventData eventData) {
-            if (OnBtnPointerUpHandle != null) {
-                OnBtnPointerUpHandle?.Invoke();
-            }
+
         }
 
         public void OnPointerUp(PointerEventData eventData) {

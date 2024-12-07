@@ -12,10 +12,10 @@ namespace DJ {
             }
         }
 
-        public Action OnBtnPointerUpHandle;
-        public void OnBtnPointerUp() {
-            if (OnBtnPointerUpHandle != null) {
-                OnBtnPointerUpHandle?.Invoke();
+        public Action OnBtnPointerEnterHandle;
+        public void OnBtnPointerEnter() {
+            if (OnBtnPointerEnterHandle != null) {
+                OnBtnPointerEnterHandle?.Invoke();
             }
         }
     }

@@ -12,6 +12,7 @@ namespace DJ {
         // repos
         public PlayerRepository playerRepository;
         public PlatformRepository platformRepository;
+        public AudioEntity audioEntity;
 
         public GameContext() {
             assetsCore = new AssetsCore();

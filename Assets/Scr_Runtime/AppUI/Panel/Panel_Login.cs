@@ -8,7 +8,7 @@ namespace DJ {
 
         public LazyButton btnLogin;
         public Action OnBtnLoginHandle;
-        public Action OnBtnPointerUpHandle;
+        public Action OnBtnPointerEnterHandle;
 
         public void Ctor() {
             btnLogin.btn.onClick.AddListener(() => {
@@ -17,9 +17,9 @@ namespace DJ {
                 }
             });
 
-            btnLogin.OnBtnPointerUpHandle = () => {
-                if (OnBtnPointerUpHandle != null) {
-                    OnBtnPointerUpHandle?.Invoke();
+            btnLogin.OnBtnPointerEnterHandle = () => {
+                if (OnBtnPointerEnterHandle != null) {
+                    OnBtnPointerEnterHandle?.Invoke();
                 }
             };
         }

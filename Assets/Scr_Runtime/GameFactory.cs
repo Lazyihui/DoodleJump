@@ -23,5 +23,14 @@ namespace DJ {
             return entity;
         }
 
+        public static AudioEntity Audio_Create(GameContext ctx, int typeID) {
+            GameObject go = ctx.assetsCore.Entity_GetAudio();
+            go = GameObject.Instantiate(go);
+
+            AudioEntity entity = go.GetComponent<AudioEntity>();
+            entity.Ctor();
+            return entity;
+        }
+
     }
 }

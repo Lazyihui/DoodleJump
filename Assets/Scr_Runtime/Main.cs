@@ -38,8 +38,13 @@ namespace DJ {
                 Game_Business.Enter(ctx);
             };
 
-            uIEvent.OnBtnPointerUpHandle += () => {
-                Debug.Log("OnBtnPointerUpHandle");
+            uIEvent.OnBtnPointerEnterHandle += () => {
+                if (ctx.audioEntity == null) {
+                    ctx.audioEntity = AudioDomain.Spawn(ctx, 0);
+                    AudioDomain.Play(ctx);
+                } else {
+                    AudioDomain.Play(ctx);
+                }
             };
         }
 

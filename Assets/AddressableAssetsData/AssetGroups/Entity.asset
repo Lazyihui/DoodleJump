@@ -29,6 +29,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Entity
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 92d41fb6955e4ba4d99b19af14a82bba
+    m_Address: Audio_Entity
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Entity
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 2d29046314f08024dadb4cd277c12cd9, type: 2}
   m_SchemaSet:

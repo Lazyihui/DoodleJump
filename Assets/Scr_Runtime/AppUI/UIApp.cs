@@ -47,8 +47,8 @@ namespace DJ {
                 panel.OnBtnLoginHandle += () => {
                     ctx.uIEvent.OnBtnLogin();
                 };
-                panel.OnBtnPointerUpHandle += () => {
-                    ctx.uIEvent.OnBtnPointerUp();
+                panel.OnBtnPointerEnterHandle += () => {
+                    ctx.uIEvent.OnBtnPointerEnter();
                 };
 
             }
