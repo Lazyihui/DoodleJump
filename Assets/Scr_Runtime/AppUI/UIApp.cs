@@ -31,6 +31,7 @@ namespace DJ {
 
         public void Inject(AssetsCore assetsCore, Canvas canvas) {
             ctx.Inject(assetsCore, canvas);
+            LazyUtil.audioSource = new GameObject("Audio").AddComponent<AudioSource>();
         }
 
         public void Panel_Login_Open() {

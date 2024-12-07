@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   btn: {fileID: 2154464706548731704}
+  audioClip: {fileID: 8300000, guid: 201fa52f15cc91b49808173c1f1fc2ef, type: 3}
 --- !u!1 &1984355976237712973
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,6 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   btn: {fileID: 7863449278174040071}
+  audioClip: {fileID: 8300000, guid: 201fa52f15cc91b49808173c1f1fc2ef, type: 3}
 --- !u!1 &2479831581356908030
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,6 +541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   btn: {fileID: 2781582063757367187}
+  audioClip: {fileID: 8300000, guid: 201fa52f15cc91b49808173c1f1fc2ef, type: 3}
 --- !u!1 &3963086939244343095
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,6 +677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   btn: {fileID: 4851566124412092423}
+  audioClip: {fileID: 8300000, guid: 201fa52f15cc91b49808173c1f1fc2ef, type: 3}
 --- !u!1 &4668275937274386133
 GameObject:
   m_ObjectHideFlags: 0

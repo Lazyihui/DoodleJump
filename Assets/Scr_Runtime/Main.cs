@@ -39,7 +39,7 @@ namespace DJ {
             };
 
             uIEvent.OnBtnPointerEnterHandle += () => {
-                if (ctx.audioEntity == null) {
+                if (ctx.audioEntity == null) {  
                     ctx.audioEntity = AudioDomain.Spawn(ctx, 0);
                     AudioDomain.Play(ctx);
                 } else {

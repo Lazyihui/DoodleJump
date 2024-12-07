@@ -10,12 +10,12 @@ namespace DJ {
     IPointerUpHandler, IPointerEnterHandler {
 
         [SerializeField] public Button btn;
+        [SerializeField] AudioClip audioClip;
         public Action OnBtnPointerEnterHandle;
 
+
         public void OnPointerEnter(PointerEventData eventData) {
-            if (OnBtnPointerEnterHandle != null) {
-                OnBtnPointerEnterHandle?.Invoke();
-            }
+            LazyUtil.PlayAudio(audioClip);
         }
 
         public void OnPointerMove(PointerEventData eventData) {

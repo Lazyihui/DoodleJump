@@ -19,28 +19,6 @@ namespace DJ {
                     OnBtnLoginHandle?.Invoke();
                 }
             });
-
-            btnLogin.OnBtnPointerEnterHandle = () => {
-                if (OnBtnPointerEnterHandle != null) {
-                    OnBtnPointerEnterHandle?.Invoke();
-                }
-            };
-            btnLogin2.OnBtnPointerEnterHandle = () => {
-                if (OnBtnPointerEnterHandle != null) {
-                    OnBtnPointerEnterHandle?.Invoke();
-                }
-            };
-            btnLogin3.OnBtnPointerEnterHandle = () => {
-                if (OnBtnPointerEnterHandle != null) {
-                    OnBtnPointerEnterHandle?.Invoke();
-                }
-            };
-            btnLogin4.OnBtnPointerEnterHandle = () => {
-                if (OnBtnPointerEnterHandle != null) {
-                    OnBtnPointerEnterHandle?.Invoke();
-                }
-            };
-
         }
 
         public void TearDown() {
