@@ -68,6 +68,37 @@ namespace DJ {
         public void OnBtn() {
 
         }
+        public void Panel_Setting_Open() {
+            Panel_Setting panel = ctx.panel_Setting;
+
+            if (panel == null) {
+                Debug.Assert(ctx != null, "UIContext is null");
+                Debug.Assert(ctx.canvas != null, "Canvas is null");
+                GameObject go = ctx.assetsCore.Panel_GetSetting();
+                // bool has = ctx.assetsCore.PanelS.TryGetValue("Panel_Setting", out GameObject go);
+                panel = GameObject.Instantiate(go, ctx.canvas.transform).GetComponent<Panel_Setting>();
+                panel.Ctor();
+
+                panel.OnBtnLoginHandle += () => {
+                    ctx.uIEvent.OnButtonSetting();
+                };  
+
+                panel.OnBtnLogin2Handle += () => {
+                    ctx.uIEvent.OnButtonSetting2();
+                };
+
+                panel.OnBtnLogin3Handle += () => {
+                    ctx.uIEvent.OnButtonSetting3();
+                };
+
+                panel.OnBtnLogin4Handle += () => {
+                    ctx.uIEvent.OnButtonSetting3();
+                };
+
+            }
+
+            ctx.panel_Setting = panel;
+        }
 
     }
 }

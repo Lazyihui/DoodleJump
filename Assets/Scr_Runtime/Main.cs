@@ -6,32 +6,33 @@ namespace DJ {
     public class main : MonoBehaviour {
 
         GameContext ctx;
-
         bool isTearDown = false;
 
         void Awake() {
             // ==== Instantiate ====
-            // ctx = new GameContext();
+            ctx = new GameContext();
 
-            // Canvas canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-            // ctx.Inject(canvas);
+            Canvas canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+            ctx.Inject(canvas);
 
             // // ==== Binding ====
 
             // // ==== Init ====
-            // ctx.assetsCore.LoadAll();
+            ctx.assetsCore.LoadAll();
 
             // // ==== Enter ====
             // Debug.Log("Hello World");
 
             // Login_Business.Enter(ctx);
 
-            // Binding();
+            Binding();
+
+            ctx.uiApp.Panel_Setting_Open();
         }
 
         void Binding() {
 
-            // var uIEvent = ctx.uiApp.events;
+            var uIEvent = ctx.uiApp.events;
 
             // uIEvent.OnBtnLoginHandle += () => {
             //     ctx.uiApp.Panel_Login_Close();
@@ -46,6 +47,23 @@ namespace DJ {
             //         AudioDomain.Play(ctx);
             //     }
             // };
+
+            uIEvent.OnButtonSettingHandle += () => {
+                
+                Debug.Log("OnButtonSettingHandle");
+            };
+
+            uIEvent.OnButtonSetting2Handle += () => {
+                Debug.Log("OnButtonSetting2Handle");
+            };
+
+            uIEvent.OnButtonSetting3Handle += () => {
+                Debug.Log("OnButtonSetting3Handle");
+            };
+
+            uIEvent.OnButtonSetting4Handle += () => {
+                Debug.Log("OnButtonSetting4Handle");
+            };
         }
 
         void Update() {
@@ -60,20 +78,20 @@ namespace DJ {
             // }
         }
 
-        // void OnDstroy() {
-        //     TearDown();
-        // }
+        void OnDstroy() {
+            TearDown();
+        }
 
-        // void OnApplicationQuit() {
-        //     TearDown();
-        // }
+        void OnApplicationQuit() {
+            TearDown();
+        }
 
-        // void TearDown() {
-        //     // if (isTearDown) {
-        //     //     return;
-        //     // }
-        //     // isTearDown = true;
-        //     // ctx.assetsCore.UnLoadAll();
-        // }
+        void TearDown() {
+            if (isTearDown) {
+                return;
+            }
+            isTearDown = true;
+            ctx.assetsCore.UnLoadAll();
+        }
     }
 }

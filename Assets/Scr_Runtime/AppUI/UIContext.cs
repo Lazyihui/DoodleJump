@@ -14,6 +14,7 @@ namespace DJ {
 
         // panel
         public Panel_Login panel_Login;
+        public Panel_Setting panel_Setting;
 
         public UIContext() {
             uIEvent = new UIEvent();

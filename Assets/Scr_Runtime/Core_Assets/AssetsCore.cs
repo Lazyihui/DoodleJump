@@ -83,5 +83,13 @@ namespace DJ {
             return panel;
         }
 
+        public GameObject Panel_GetSetting() {
+            panels.TryGetValue("Panel_Setting", out GameObject panel);
+            if (panel == null) {
+                Debug.LogError("Panel_Setting is null");
+            }
+            return panel;
+        }
+
     }
 }
