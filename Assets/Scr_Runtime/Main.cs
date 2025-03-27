@@ -11,69 +11,69 @@ namespace DJ {
 
         void Awake() {
             // ==== Instantiate ====
-            ctx = new GameContext();
+            // ctx = new GameContext();
 
-            Canvas canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-            ctx.Inject(canvas);
+            // Canvas canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+            // ctx.Inject(canvas);
 
-            // ==== Binding ====
+            // // ==== Binding ====
 
-            // ==== Init ====
-            ctx.assetsCore.LoadAll();
+            // // ==== Init ====
+            // ctx.assetsCore.LoadAll();
 
-            // ==== Enter ====
-            Debug.Log("Hello World");
+            // // ==== Enter ====
+            // Debug.Log("Hello World");
 
-            Login_Business.Enter(ctx);
+            // Login_Business.Enter(ctx);
 
-            Binding();
+            // Binding();
         }
 
         void Binding() {
 
-            var uIEvent = ctx.uiApp.events;
+            // var uIEvent = ctx.uiApp.events;
 
-            uIEvent.OnBtnLoginHandle += () => {
-                ctx.uiApp.Panel_Login_Close();
-                Game_Business.Enter(ctx);
-            };
+            // uIEvent.OnBtnLoginHandle += () => {
+            //     ctx.uiApp.Panel_Login_Close();
+            //     Game_Business.Enter(ctx);
+            // };
 
-            uIEvent.OnBtnPointerEnterHandle += () => {
-                if (ctx.audioEntity == null) {  
-                    ctx.audioEntity = AudioDomain.Spawn(ctx, 0);
-                    AudioDomain.Play(ctx);
-                } else {
-                    AudioDomain.Play(ctx);
-                }
-            };
+            // uIEvent.OnBtnPointerEnterHandle += () => {
+            //     if (ctx.audioEntity == null) {  
+            //         ctx.audioEntity = AudioDomain.Spawn(ctx, 0);
+            //         AudioDomain.Play(ctx);
+            //     } else {
+            //         AudioDomain.Play(ctx);
+            //     }
+            // };
         }
 
         void Update() {
-            float dt = Time.deltaTime;
+            // float dt = Time.deltaTime;
 
-            ctx.inputCore.ProcessMove();
+            // ctx.inputCore.ProcessMove();
 
-            int playerlen = ctx.playerRepository.TakeAll(out PlayerEntity[] players);
-            for (int i = 0; i < playerlen; i++) {
-                PlayerEntity player = players[i];
-                PlayerDomain.Move(ctx, player);
-            }
+            // int playerlen = ctx.playerRepository.TakeAll(out PlayerEntity[] players);
+            // for (int i = 0; i < playerlen; i++) {
+            //     PlayerEntity player = players[i];
+            //     PlayerDomain.Move(ctx, player);
+            // }
         }
 
-        void OnDstroy() {
-            TearDown();
-        }
+        // void OnDstroy() {
+        //     TearDown();
+        // }
 
-        void OnApplicationQuit() {
-            TearDown();
-        }
+        // void OnApplicationQuit() {
+        //     TearDown();
+        // }
 
-        void TearDown() {
-            if (isTearDown) {
-                return;
-            }
-            isTearDown = true;
-            ctx.assetsCore.UnLoadAll();
-        }
+        // void TearDown() {
+        //     // if (isTearDown) {
+        //     //     return;
+        //     // }
+        //     // isTearDown = true;
+        //     // ctx.assetsCore.UnLoadAll();
+        // }
     }
 }
