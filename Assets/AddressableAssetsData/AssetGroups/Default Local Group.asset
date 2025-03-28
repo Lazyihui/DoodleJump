@@ -16,7 +16,13 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 4e903947035624e4f94ae83bb49ae022
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 41abd0ca02da7c34aa95018067d467db
+    m_Address: Assets/Res_Runtime/Panel_countDown.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Panel
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 2d29046314f08024dadb4cd277c12cd9, type: 2}
   m_SchemaSet:

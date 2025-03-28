@@ -81,7 +81,7 @@ namespace DJ {
 
                 panel.OnBtnLoginHandle += () => {
                     ctx.uIEvent.OnButtonSetting();
-                };  
+                };
 
                 panel.OnBtnLogin2Handle += () => {
                     ctx.uIEvent.OnButtonSetting2();
@@ -99,6 +99,33 @@ namespace DJ {
 
             ctx.panel_Setting = panel;
         }
+        public void Panel_CountDown_Open() {
+            Panel_CountDown panel = ctx.panel_CountDown;
 
+            if (panel == null) {
+                GameObject go = ctx.assetsCore.Panel_GetCountDown();
+                // bool has = ctx.assetsCore.PanelS.TryGetValue("Panel_CountDown", out GameObject go);
+                panel = GameObject.Instantiate(go, ctx.canvas.transform).GetComponent<Panel_CountDown>();
+                panel.Ctor();
+            }
+
+            ctx.panel_CountDown = panel;
+        }
+
+        public void Panel_CountDown_SetText(float time) {
+            Panel_CountDown panel = ctx.panel_CountDown;
+            if (panel == null) {
+                return;
+            }
+            panel.SetText(time);
+        }
+
+        public void Panel_CountDown_Close() {
+            Panel_CountDown panel = ctx.panel_CountDown;
+            if (panel == null) {
+                return;
+            }
+            panel.TearDown();
+        }
     }
 }

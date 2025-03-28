@@ -91,5 +91,13 @@ namespace DJ {
             return panel;
         }
 
+        public GameObject Panel_GetCountDown() {
+            panels.TryGetValue("Panel_CountDown", out GameObject panel);
+            if (panel == null) {
+                Debug.LogError("Panel_CountDown is null");
+            }
+            return panel;
+        }
+
     }
 }

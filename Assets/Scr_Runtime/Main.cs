@@ -49,25 +49,40 @@ namespace DJ {
             // };
 
             uIEvent.OnButtonSettingHandle += () => {
-                
                 Debug.Log("OnButtonSettingHandle");
+                ctx.uiApp.Panel_CountDown_Open();
             };
 
             uIEvent.OnButtonSetting2Handle += () => {
                 Debug.Log("OnButtonSetting2Handle");
+                ctx.uiApp.Panel_CountDown_Open();
+
             };
 
             uIEvent.OnButtonSetting3Handle += () => {
                 Debug.Log("OnButtonSetting3Handle");
+                ctx.uiApp.Panel_CountDown_Open();
+
             };
 
             uIEvent.OnButtonSetting4Handle += () => {
                 Debug.Log("OnButtonSetting4Handle");
+                ctx.uiApp.Panel_CountDown_Open();
+
             };
         }
 
+        float time = 0f;
+
         void Update() {
-            // float dt = Time.deltaTime;
+            float dt = Time.deltaTime;
+            var uiApp = ctx.uiApp;
+
+            time += dt;
+            uiApp.Panel_CountDown_SetText(time);
+            if (time > 3f) {
+                uiApp.Panel_CountDown_Close();
+            }
 
             // ctx.inputCore.ProcessMove();
 
