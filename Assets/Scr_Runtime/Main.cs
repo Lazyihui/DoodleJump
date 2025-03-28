@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace DJ {
     public class main : MonoBehaviour {
@@ -8,13 +9,19 @@ namespace DJ {
         GameContext ctx;
         bool isTearDown = false;
 
+        [SerializeField] InputActionAsset inputActionAsset;
+
         void Awake() {
             // ==== Instantiate ====
             ctx = new GameContext();
 
             Canvas canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-            ctx.Inject(canvas);
+            Debug.Assert(ctx != null, "ctx is null");
 
+
+            ctx.Inject(canvas, inputActionAsset);
+
+            ctx.inputRebindingSystem.Init();
             // // ==== Binding ====
 
             // // ==== Init ====
@@ -25,8 +32,8 @@ namespace DJ {
 
             // Login_Business.Enter(ctx);
 
-            Binding();
 
+            Binding();
             ctx.uiApp.Panel_Setting_Open();
         }
 
@@ -34,45 +41,30 @@ namespace DJ {
 
             var uIEvent = ctx.uiApp.events;
 
-            // uIEvent.OnBtnLoginHandle += () => {
-            //     ctx.uiApp.Panel_Login_Close();
-            //     Game_Business.Enter(ctx);
-            // };
-
-            // uIEvent.OnBtnPointerEnterHandle += () => {
-            //     if (ctx.audioEntity == null) {  
-            //         ctx.audioEntity = AudioDomain.Spawn(ctx, 0);
-            //         AudioDomain.Play(ctx);
-            //     } else {
-            //         AudioDomain.Play(ctx);
-            //     }
-            // };
-
             uIEvent.OnButtonSettingHandle += () => {
-                Debug.Log("OnButtonSettingHandle");
                 ctx.uiApp.Panel_CountDown_Open();
+                ctx.inputRebindingSystem.StartRebinding(ctx.inputRebindingSystem.ctx.rebindings[0]);
             };
 
             uIEvent.OnButtonSetting2Handle += () => {
-                Debug.Log("OnButtonSetting2Handle");
                 ctx.uiApp.Panel_CountDown_Open();
 
             };
 
             uIEvent.OnButtonSetting3Handle += () => {
-                Debug.Log("OnButtonSetting3Handle");
                 ctx.uiApp.Panel_CountDown_Open();
 
             };
 
             uIEvent.OnButtonSetting4Handle += () => {
-                Debug.Log("OnButtonSetting4Handle");
                 ctx.uiApp.Panel_CountDown_Open();
 
             };
         }
 
         float time = 0f;
+
+        bool isStart = false;
 
         void Update() {
             float dt = Time.deltaTime;
@@ -84,13 +76,32 @@ namespace DJ {
                 uiApp.Panel_CountDown_Close();
             }
 
-            // ctx.inputCore.ProcessMove();
+            ctx.inputCore.ProcessMove();
 
-            // int playerlen = ctx.playerRepository.TakeAll(out PlayerEntity[] players);
-            // for (int i = 0; i < playerlen; i++) {
-            //     PlayerEntity player = players[i];
-            //     PlayerDomain.Move(ctx, player);
-            // }
+            if (ctx.inputCore.IsHpress) {
+                isStart = true;
+
+                isStart = false;
+            }
+
+            if (ctx.inputCore.IsQPress) {
+                isStart = true;
+
+                isStart = false;
+            }
+
+            if (ctx.inputCore.IsRPress) {
+                isStart = true;
+
+                isStart = false;
+            }
+
+            if (ctx.inputCore.IsEpress) {
+                isStart = true;
+
+                isStart = false;
+            }
+
         }
 
         void OnDstroy() {

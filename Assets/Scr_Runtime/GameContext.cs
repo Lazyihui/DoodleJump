@@ -1,7 +1,8 @@
-using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
-
+using System.Collections.Generic;
+using TMPro;
 
 namespace DJ {
 
@@ -10,22 +11,22 @@ namespace DJ {
         public InputCore inputCore;
         public UIApp uiApp;
         // repos
-        public PlayerRepository playerRepository;
-        public PlatformRepository platformRepository;
-        public AudioEntity audioEntity;
 
+        // temp
+        public InputRebindingSystem inputRebindingSystem;
         public GameContext() {
             assetsCore = new AssetsCore();
             inputCore = new InputCore();
             uiApp = new UIApp();
 
-            // repos 
-            playerRepository = new PlayerRepository();
-            platformRepository = new PlatformRepository();
+            // temp
+            inputRebindingSystem = new InputRebindingSystem();
+
         }
 
-        public void Inject(Canvas canvas) {
+        public void Inject(Canvas canvas, InputActionAsset inputActionAsset) {
             uiApp.Inject(assetsCore, canvas);
+            inputRebindingSystem.Inject(uiApp, inputActionAsset);
         }
     }
 }

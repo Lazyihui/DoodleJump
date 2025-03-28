@@ -6,9 +6,6 @@ namespace DJ {
 
         public static void Enter(GameContext ctx) {
 
-            PlayerDomain.Spawn(ctx, 1);
-            PlatformDomain.Spawn(ctx, 1);
-
         }
 
 

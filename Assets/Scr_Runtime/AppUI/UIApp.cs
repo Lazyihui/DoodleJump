@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 namespace DJ {
 
@@ -38,8 +40,6 @@ namespace DJ {
             Panel_Login panel = ctx.panel_Login;
 
             if (panel == null) {
-                Debug.Assert(ctx != null, "UIContext is null");
-                Debug.Assert(ctx.canvas != null, "Canvas is null");
                 GameObject go = ctx.assetsCore.Panel_GetLogin();
                 // bool has = ctx.assetsCore.PanelS.TryGetValue("Panel_Login", out GameObject go);
                 panel = GameObject.Instantiate(go, ctx.canvas.transform).GetComponent<Panel_Login>();
@@ -99,6 +99,66 @@ namespace DJ {
 
             ctx.panel_Setting = panel;
         }
+
+        public Button GetBtnLogin() {
+            Panel_Setting panel = ctx.panel_Setting;
+            if (panel == null) {
+                return null;
+            }
+            Debug.Assert(panel != null, "Panel_Setting is null");
+            Debug.Assert(panel.GetBtnLogin() != null, "GetBtnLogin is null");
+            return panel.GetBtnLogin();
+        }
+        public Button GetBtnLogin2() {
+            Panel_Setting panel = ctx.panel_Setting;
+            if (panel == null) {
+                return null;
+            }
+            return panel.GetBtnLogin2();
+        }
+        public Button GetBtnLogin3() {
+            Panel_Setting panel = ctx.panel_Setting;
+            if (panel == null) {
+                return null;
+            }
+            return panel.GetBtnLogin3();
+        }
+        public Button GetBtnLogin4() {
+            Panel_Setting panel = ctx.panel_Setting;
+            if (panel == null) {
+                return null;
+            }
+            return panel.GetBtnLogin4();
+        }
+        public TextMeshProUGUI GetText() {
+            Panel_Setting panel = ctx.panel_Setting;
+            if (panel == null) {
+                return null;
+            }
+            return panel.GetText();
+        }
+        public TextMeshProUGUI GetText2() {
+            Panel_Setting panel = ctx.panel_Setting;
+            if (panel == null) {
+                return null;
+            }
+            return panel.GetText2();
+        }
+        public TextMeshProUGUI GetText3() {
+            Panel_Setting panel = ctx.panel_Setting;
+            if (panel == null) {
+                return null;
+            }
+            return panel.GetText3();
+        }
+        public TextMeshProUGUI GetText4() {
+            Panel_Setting panel = ctx.panel_Setting;
+            if (panel == null) {
+                return null;
+            }
+            return panel.GetText4();
+        }
+
         public void Panel_CountDown_Open() {
             Panel_CountDown panel = ctx.panel_CountDown;
 
@@ -119,6 +179,8 @@ namespace DJ {
             }
             panel.SetText(time);
         }
+
+
 
         public void Panel_CountDown_Close() {
             Panel_CountDown panel = ctx.panel_CountDown;

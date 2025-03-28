@@ -1,0 +1,102 @@
+{
+    "name": "Controls",
+    "maps": [
+        {
+            "name": "Player1Controls",
+            "id": "d04d3b92-313a-4ada-8680-2f6ff60b05a3",
+            "actions": [
+                {
+                    "name": "HPress",
+                    "type": "Button",
+                    "id": "dde59249-f5e9-4ca9-949f-769b39fc8685",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "QPress",
+                    "type": "Button",
+                    "id": "81d4daea-840c-44ec-8679-8b0704610aa5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8427c201-4fdd-4981-a01b-5983e5596ea8",
+                    "path": "<Keyboard>/h",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2a0314ee-d797-4610-a9f3-e82f58244285",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "QPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Player2Controls",
+            "id": "a4a561af-9079-485e-bbbe-90363c3d6fcb",
+            "actions": [
+                {
+                    "name": "EPress",
+                    "type": "Button",
+                    "id": "e7936300-08a1-4dcc-8eeb-c9bbf3037a1a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "RPress",
+                    "type": "Button",
+                    "id": "179de8b4-cdec-4219-bbba-8d910fc3a953",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a3d662fe-9a05-4de9-9e79-d813b3bfcb9f",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8b644469-e508-4551-a528-d6e5c1fb31e6",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

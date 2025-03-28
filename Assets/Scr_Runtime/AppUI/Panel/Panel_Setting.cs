@@ -48,7 +48,32 @@ namespace DJ {
                     OnBtnLogin4Handle?.Invoke();
                 }
             });
+        }
 
+        public Button GetBtnLogin() {
+            return btnLogin;
+        }
+        public Button GetBtnLogin2() {
+            return btnLogin2;
+        }
+        public Button GetBtnLogin3() {
+            return btnLogin3;
+        }
+        public Button GetBtnLogin4() {
+            return btnLogin4;
+        }
+
+        public TextMeshProUGUI GetText() {
+            return txtLogin;
+        }
+        public TextMeshProUGUI GetText2() {
+            return txtLogin2;
+        }
+        public TextMeshProUGUI GetText3() {
+            return txtLogin3;
+        }
+        public TextMeshProUGUI GetText4() {
+            return txtLogin4;
         }
 
         public void SetText(string txt) {
